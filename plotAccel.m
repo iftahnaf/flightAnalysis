@@ -1,4 +1,4 @@
-function [] = plotAccel(matFile)
+function [] = plotAccel(matFile,LPFfreq)
 %this function plot the accelometers data from the log files. made by
 %Iftach Naftaly, 2.8.20
 
@@ -11,20 +11,49 @@ accel_x = Data.sysvector.sensor_combined_0.accelerometer_m_s2_0.Data;
 accel_y = Data.sysvector.sensor_combined_0.accelerometer_m_s2_1.Data;
 accel_z = Data.sysvector.sensor_combined_0.accelerometer_m_s2_2.Data;
 
-accel_x_f = smoothdata(accel_x,'gaussian');
-accel_y_f = smoothdata(accel_y,'gaussian');
-accel_z_f = smoothdata(accel_z,'gaussian');
+accel_x_f = lowpass(accel_x,LPFfreq);
+accel_y_f = lowpass(accel_y,LPFfreq);
+accel_z_f = lowpass(accel_z,LPFfreq);
 
 figure(1)
+subplot(3,1,1)
 plot(time_ref-time_ref(1),accel_x,'k','linewidth',0.3);
 hold on
-% plot(time_ref-time_ref(1),accel_x_f,'r','linewidth',0.8);
+plot(time_ref-time_ref(1),accel_x_f,'r','linewidth',0.8);
 grid minor
 set(gca,'fontsize',16)
 set(gcf,'color','w')
 xlabel('Time [sec]')
 ylabel('Acceleration [m/s^2]')
-% legend('Raw Data','Filtered')
+legend('Raw Data - x','Filtered Data -x')
+title('Accelometer Data vs Time - X')
+axis tight
+
+subplot(3,1,2)
+plot(time_ref-time_ref(1),accel_y,'k','linewidth',0.3);
+hold on
+plot(time_ref-time_ref(1),accel_y_f,'r','linewidth',0.8);
+grid minor
+set(gca,'fontsize',16)
+set(gcf,'color','w')
+xlabel('Time [sec]')
+ylabel('Acceleration [m/s^2]')
+legend('Raw Data - y','Filtered Data -y')
+title('Accelometer Data vs Time - Y')
+axis tight
+
+subplot(3,1,3)
+plot(time_ref-time_ref(1),accel_z,'k','linewidth',0.3);
+hold on
+plot(time_ref-time_ref(1),accel_z_f,'r','linewidth',0.8);
+grid minor
+set(gca,'fontsize',16)
+set(gcf,'color','w')
+xlabel('Time [sec]')
+ylabel('Acceleration [m/s^2]')
+legend('Raw Data - z','Filtered Data -z')
+title('Accelometer Data vs Time - Z')
+axis tight
 
 end
 
