@@ -31,7 +31,19 @@ addpath(genpath('08_analysis_tools'));
 % SETTINGS (modify necessary parameter)
 % ************************************************************************
 
-% The log file name, no file specifier required
+% % The log file name, no file specifier required
+% fileName_check = ulg_file;
+% dotLocations = find(fileName_check == '.');
+% if isempty(dotLocations)
+% 	% No dots at all found so just take entire name.
+% 	fileName = ulg_file;
+% else
+% 	% Take up to , but not including, the first dot.
+% 	fileName = ulg_file(1:dotLocations(1)-1);
+% end
+
+
+% 
 fileName = ulg_file;
 
 % The log file location, only required when converting a .ulg file. All
