@@ -1,3 +1,4 @@
+function []  = ulg2mat(ulg_file)
 % This Matlab Script can be used to import the binary logged values of the
 % PX4FMU into data that can be plotted and analyzed.
 % A maximum of 6 instances per topics are supported while converting. For
@@ -15,7 +16,6 @@
 
 % Clear everything
 clc;
-clear;
 close all;
 
 addpath(genpath('01_draw_functions'));
@@ -32,7 +32,7 @@ addpath(genpath('08_analysis_tools'));
 % ************************************************************************
 
 % The log file name, no file specifier required
-fileName = 'log_50_2020-8-2-07-36-20';
+fileName = ulg_file;
 
 % The log file location, only required when converting a .ulg file. All
 % .csv files are supposed to be in 05_csv_files, and all .mat files are
@@ -222,3 +222,6 @@ end
 if generatePlots
     DisplayPX4LogData(sysvector, topics, paramvector, params, fileName, fconv_gpsalt, fconv_gpslatlong, plotvector)
 end
+disp('MAT File Ready')
+end
+
