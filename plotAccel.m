@@ -15,11 +15,11 @@ accel_x_f = lowpass(accel_x,LPFfreq);
 accel_y_f = lowpass(accel_y,LPFfreq);
 accel_z_f = lowpass(accel_z,LPFfreq);
 
-U = [accel_x_f;accel_y_f;accel_z_f];
-NormU = zeros(1,length(accel_x));
+U = [accel_x_f accel_y_f accel_z_f];
+NormU = zeros(length(accel_x),1);
 
 for i = 1 : length(accel_z_f)
-    NormU(i) = norm(U(i));
+    NormU(i) = norm(U(i,:));
 end
 
 max_U = max(NormU);

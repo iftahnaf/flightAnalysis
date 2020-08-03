@@ -1,4 +1,4 @@
-function [] = plotVel(matFile)
+function max_v = plotVel(matFile)
 %this function plot the XYZ Velocity data from the log files. made by
 %Iftach Naftaly, 2.8.20
 
@@ -10,10 +10,10 @@ time_ref = Data.sysvector.vehicle_local_position_0.vx.Time;
 vx = Data.sysvector.vehicle_local_position_0.vx.Data;
 vy = Data.sysvector.vehicle_local_position_0.vy.Data;
 vz = Data.sysvector.vehicle_local_position_0.vz.Data;
-V = [vx;vy;vz];
-NormV = zeros(1,length(vx));
+V = [vx vy vz];
+NormV = zeros(length(vx),1);
 for i = 1 : length(vx)
-    NormV(i) = norm(V(i));
+    NormV(i) = norm(V(i,:));
 end
 
 max_v = max(NormV);
