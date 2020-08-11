@@ -42,7 +42,7 @@ set(gcf,'color','w')
 xlabel('Time [sec]')
 ylabel('Tgo [sec]')
 title('Tgo vs Time')
-axis tight
+% axis tight
 
 end
 
