@@ -9,7 +9,7 @@ time_ref = Data.sysvector.sensor_combined_0.accelerometer_m_s2_0.Time;
 
 accel_x = Data.sysvector.sensor_combined_0.accelerometer_m_s2_0.Data;
 accel_y = Data.sysvector.sensor_combined_0.accelerometer_m_s2_1.Data;
-accel_z = Data.sysvector.sensor_combined_0.accelerometer_m_s2_2.Data;
+accel_z = Data.sysvector.sensor_combined_0.accelerometer_m_s2_2.Data ;
 
 accel_x_f = lowpass(accel_x,LPFfreq);
 accel_y_f = lowpass(accel_y,LPFfreq);
