@@ -23,6 +23,10 @@ drho = rho_u - rho_w;
 Tgo = zeros(1,length(x));
 R = zeros(1,length(x));
 V = zeros(1,length(x));
+<<<<<<< HEAD
+=======
+Range = zeros(1,length(x));
+>>>>>>> devel
 
 for i = 1 : length(x)
     R(i,1) = R_e(1) - R_p(i,1);
@@ -31,11 +35,26 @@ for i = 1 : length(x)
     V(i,1) = V_e(1) - V_p(i,1);
     V(i,2) = V_e(2) - V_p(i,2);
     V(i,3) = V_e(3) - V_p(i,3);
+<<<<<<< HEAD
     Tgo(i) = tgo_interception(R(i,:),V(i,:),drho,m,minTgo);
 end
 
 figure(1)
 plot(time_ref-time_ref(1),Tgo,'k','linewidth',1);
+=======
+    Range(i) = norm(R(i,:));
+    Tgo(i) = tgo_interception(R(i,:),V(i,:),drho,m,minTgo);
+end
+
+for k = 1 : length(Range)
+    if (Range(k+1) > Range(k)) && (time_ref(k) - time_ref(1) > 10)
+        break
+    end
+end
+
+figure(1)
+plot(time_ref(1:k)-time_ref(1),Tgo(1:k),'k','linewidth',1);
+>>>>>>> devel
 grid minor
 set(gca,'fontsize',16)
 set(gcf,'color','w')

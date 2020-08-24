@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 function [] = plotRange(matFile,R_e,V_e)
+=======
+function [] = plotRange(matFile,R_e,V_e,interval)
+>>>>>>> devel
 %this function plot the Range data from the log files. made by
 %Iftach Naftaly, 10.8.20
 
@@ -33,8 +37,24 @@ for i = 1 : length(x)
     Vel_Norm(i) = norm(V(i,:));
 end
 
+<<<<<<< HEAD
 figure(1)
 plot(time_ref-time_ref(1),Range,'k','linewidth',1);
+=======
+if interval == 0
+    %     for k = 1 : length(Range)
+    %         if (Range(k+1) > Range(k)) && (time_ref(k) - time_ref(1) > 10)
+    %             break
+    %         end
+    %     end
+    k = length(x);
+else
+    k = interval;
+end
+
+figure(1)
+plot(time_ref(1:k)-time_ref(1),Range(1:k),'k','linewidth',1);
+>>>>>>> devel
 grid minor
 set(gca,'fontsize',16)
 set(gcf,'color','w')
@@ -45,7 +65,11 @@ axis tight
 
 
 figure(2)
+<<<<<<< HEAD
 plot(time_ref-time_ref(1),Vel_Norm,'k','linewidth',1);
+=======
+plot(time_ref(1:k)-time_ref(1),Vel_Norm(1:k),'k','linewidth',1);
+>>>>>>> devel
 grid minor
 set(gca,'fontsize',16)
 set(gcf,'color','w')
