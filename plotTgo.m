@@ -28,6 +28,10 @@ V = zeros(1,length(x));
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+Range = zeros(1,length(x));
+>>>>>>> devel
 =======
 Range = zeros(1,length(x));
 >>>>>>> devel
@@ -56,12 +60,15 @@ for i = 1 : length(x)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Tgo(i) = tgo_interception(R(i,:),V(i,:),drho,m,minTgo);
 end
 
 figure(1)
 plot(time_ref-time_ref(1),Tgo,'k','linewidth',1);
 =======
+=======
+>>>>>>> devel
 =======
 >>>>>>> devel
 =======
@@ -86,6 +93,9 @@ plot(time_ref(1:k)-time_ref(1),Tgo(1:k),'k','linewidth',1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> devel
+=======
 >>>>>>> devel
 =======
 >>>>>>> devel
