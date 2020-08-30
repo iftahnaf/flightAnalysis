@@ -26,6 +26,10 @@ set(gcf,'color','w')
 xlabel('Time [sec]');
 ylabel('Tgo  [sec]');
 grid minor
+<<<<<<< HEAD
+=======
+title('Tgo vs Time')
+>>>>>>> devel
 axis tight
 
 end

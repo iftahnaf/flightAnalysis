@@ -5,7 +5,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function [] = plotRange(matFile,R_e,V_e)
+=======
+function [] = plotRange(matFile,R_e,V_e,interval)
+>>>>>>> devel
 =======
 function [] = plotRange(matFile,R_e,V_e,interval)
 >>>>>>> devel
@@ -68,9 +72,12 @@ end
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 figure(1)
 plot(time_ref-time_ref(1),Range,'k','linewidth',1);
 =======
+=======
+>>>>>>> devel
 =======
 >>>>>>> devel
 =======
@@ -102,6 +109,9 @@ plot(time_ref(1:k)-time_ref(1),Range(1:k),'k','linewidth',1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> devel
+=======
 >>>>>>> devel
 =======
 >>>>>>> devel
@@ -132,7 +142,11 @@ figure(2)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 plot(time_ref-time_ref(1),Vel_Norm,'k','linewidth',1);
+=======
+plot(time_ref(1:k)-time_ref(1),Vel_Norm(1:k),'k','linewidth',1);
+>>>>>>> devel
 =======
 plot(time_ref(1:k)-time_ref(1),Vel_Norm(1:k),'k','linewidth',1);
 >>>>>>> devel
