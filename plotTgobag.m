@@ -11,11 +11,9 @@ else
     time = select(bag, 'topic', '/softLanding/Tgo');
 end
 time_msg = readMessages(time);
-numberOfElements = bag.NumMessages;
-t = linspace(0,bag.EndTime-bag.StartTime,numberOfElements);
 time_sec = zeros(1,length(time_msg));
-
-for k=1:1:length(time_msg)
+t = linspace(0,bag.EndTime-bag.StartTime,length(time_sec));
+for k=1:1:length(time_sec)
     time_sec(k) = vpa(time_msg{k}.Real,10);
 end
 
