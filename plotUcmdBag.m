@@ -1,4 +1,4 @@
-function [] = plotUbag(ros_bag)
+function [] = plotUcmdBag(ros_bag)
 %this function plot the U from the rosbag file. its inputs are
 %the bagfile name (include the .bag). made by
 %Iftach Naftaly, 25.8.2020
@@ -8,7 +8,7 @@ bag = rosbag(ros_bag);
 
 U = select(bag, 'topic', '/interception/u');
 U_msg = readMessages(U);
-t = linspace(0,bag.EndTime-bag.StartTime,bag.AvailableTopics{1,1}-1);
+t = linspace(0,bag.EndTime,length(U_msg));
 u_x= zeros(1,length(U_msg));
 u_y= zeros(1,length(U_msg));
 u_z= zeros(1,length(U_msg));
