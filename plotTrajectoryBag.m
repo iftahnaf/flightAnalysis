@@ -24,14 +24,15 @@ for k=1:1:length(r_p_msg)
 end
 
 figure(1)
-plot3(x_p,y_p,z_p,'b','linewidth',1)
+plot(x_p,z_p,'b','linewidth',1)
 hold on
-plot3(x_t,y_t,z_t,'r','linewidth',1)
+plot(x_t,z_t,'r','linewidth',1)
 set(gca,'fontsize',16);
 set(gcf,'color','w')
 xlabel('X [m]');
 ylabel('Y [m]');
-zlabel('Z [m]');
+xlim([-100,200])
+ylim([0,65])
 legend('Drone','Target');
 grid minor
 end
