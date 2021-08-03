@@ -25,13 +25,16 @@ for k=1:1:length(r_p_msg)
     z_t(k) = r_t_msg{k}.Pose.Position.Z;
     
     range = sqrt( (x_p(k) - x_t(k))^2 + (y_p(k) - y_t(k))^2 + (z_p(k) - z_t(k))^2 );
+    txt = sprintf("Range = %f [m]", range);
     
     figure(1)
     plot(x_p(k),z_p(k),'*b','linewidth',1)
     hold on
     plot(x_t(k),z_t(k),'*r','linewidth',1)
     hold on
+    htext = text(50,20, txt);
     pause(0.05)
+    delete(htext)
 
 end
 hold off
