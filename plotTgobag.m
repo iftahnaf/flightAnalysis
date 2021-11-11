@@ -11,11 +11,17 @@ else
     time = select(bag, 'topic', '/softLanding/Tgo');
 end
 time_msg = readMessages(time);
+<<<<<<< HEAD
 numberOfElements = bag.NumMessages;
 t = linspace(0,bag.EndTime-bag.StartTime,numberOfElements);
 time_sec = zeros(1,length(time_msg));
 
 for k=1:1:length(time_msg)
+=======
+time_sec = zeros(1,length(time_msg));
+t = linspace(0,bag.EndTime-bag.StartTime,length(time_sec));
+for k=1:1:length(time_sec)
+>>>>>>> devel
     time_sec(k) = vpa(time_msg{k}.Real,10);
 end
 
@@ -27,6 +33,10 @@ xlabel('Time [sec]');
 ylabel('Tgo  [sec]');
 grid minor
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+title('Tgo vs Time')
+>>>>>>> devel
 =======
 title('Tgo vs Time')
 >>>>>>> devel
