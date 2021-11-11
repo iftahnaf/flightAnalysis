@@ -15,3 +15,7 @@ Script to convert .ulg files first to .csv files and then import it to matlab. A
   1. Generate the plotting function in `01_draw_functions/01_subfunctions`
   2. Add the function call and parameters, if required, in the `DisplayPX4LogData.m` script.
   3. If the axes should be linked to other figures add the figure indexes in the `LinkFigureAxes.m` function.
+
+## matlab GUI addon
+
+run ulogGUI from matlab command line to start the gui.
