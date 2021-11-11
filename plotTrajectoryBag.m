@@ -28,12 +28,12 @@ for k=1:1:length(r_p_msg)
     txt = sprintf("Range = %f [m]", range);
     
     figure(1)
-    plot(x_p(k),z_p(k),'*b','linewidth',1)
+    plot(y_p(k),z_p(k),'*b','linewidth',1)
     hold on
-    plot(x_t(k),z_t(k),'*r','linewidth',1)
+    plot(y_t(k),z_t(k),'*r','linewidth',1)
     hold on
     htext = text(50,20, txt);
-    pause(0.05)
+    pause(0.01)
     delete(htext)
 
 end
